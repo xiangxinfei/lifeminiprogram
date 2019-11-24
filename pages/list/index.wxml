@@ -1,0 +1,5 @@
+<view class="container">
+  <!-- <view class="list-item" wx:for="{{list}}">
+    <image class="listImage" src="{{}}" />
+  </view> -->
+</view>

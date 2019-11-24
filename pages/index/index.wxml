@@ -1,0 +1,21 @@
+<!-- index.wxml -->
+<view class="page">
+  <!-- 顶部轮播图 -->
+  <view>
+    <swiper class="swiper-container" indicator-dots="{{true}}" autoplay="{{true}}" interval="3000" circular="{{true}}">
+      <swiper-item class="swiper-item" wx:for="{{slides}}" wx:key="id" item-id="{{item.id}}">
+        <navigator wx:if="{{item.link}}" class="navigator" url="{{item.link}}">
+          <image class="item-image" src="{{item.image}}" mode="aspectFill" />
+          <text class="">{{item.id}}</text>
+        </navigator>
+        <image wx:else class="item-image" src="{{item.image}}" mode="aspectFill" />
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="menu">
+    <navigator class="menu-item" wx:for="{{menu}}" wx:key="id" url="/pages/list/index?id={{item.id}}">
+      <image class="item-image" src="{{item.icon}}" mode="aspectFit" />
+      <text class="item-text">{{item.name}}</text>
+    </navigator>
+  </view>
+</view>
