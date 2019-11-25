@@ -1,5 +1,4 @@
 import ApiList from '../../api/list'
-const apiList = new ApiList();
 Page({
   data: {
     category: {},
@@ -7,10 +6,9 @@ Page({
   },
   onLoad(options) {
     const id = options.id;
-    apiList.getList({
+    ApiList.getList({
       id
     }).then((res) => {
-      console.log(res);
       this.setData({
         category: res.data[0]
       })
