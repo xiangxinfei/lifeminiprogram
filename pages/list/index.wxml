@@ -1,4 +1,11 @@
 <view class="container">
+  <view class="search-form">
+    <input class="search-input" cursor-spacing="2" confirm-type="search"></input>
+    <view class="search-box">
+      <icon type='search' class='search-icon' color='#e0e0e0' size='13'></icon>
+      <text class="search-text">搜索</text>
+    </view>
+  </view>
   <!-- <view class="list-item" wx:for="{{list}}">
     <image class="listImage" src="{{}}" />
   </view> -->

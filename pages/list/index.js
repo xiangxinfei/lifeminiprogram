@@ -3,18 +3,25 @@ Page({
   data: {
     category: {},
     list: [],
+    pageIndex: 0,
+    pageSize: 20,
   },
   onLoad(options) {
     const id = options.id;
-    ApiList.getList({
-      id
-    }).then((res) => {
+    ApiList.getTitle(id).then((res) => {
       this.setData({
-        category: res.data[0]
+        category: res.data
       })
       wx.setNavigationBarTitle({
-        title: res.data[0].name
+        title: res.data.name
       })
+      let params = {
+        'pageIndex': 0,
+        'pageSize': 20
+      }
+      return ApiList.getList(res.data.id, params)
+    }).then(res => {
+      console.log(res);
     })
   },
 })

@@ -9,6 +9,7 @@ movable-area,
 cover-view,
 navigator,
 text,
-button {
+button,
+input {
   box-sizing: border-box;
 }
