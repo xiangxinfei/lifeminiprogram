@@ -1,0 +1,10 @@
+<view class="container">
+  <!-- 轮播图 -->
+  <view class="slide-container">
+    <swiper class="slide-swiper" indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}">
+      <swiper-item class="slide-item" wx:for="{{shops.images}}" wx:key="id">
+        <image class="item-image" src="{{item}}" data-src="{{item}}" mode="aspectFill" bindtap="viewImage" />
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

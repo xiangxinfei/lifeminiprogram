@@ -2,10 +2,12 @@
   "pages": [
     "pages/index/index",
     "pages/mine/index",
-    "pages/list/index"
+    "pages/list/index",
+    "pages/list-detail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
+    "backgroundColor": "#B0C4DE",
     "navigationBarBackgroundColor": "#AFEEEE",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"

@@ -1,12 +1,25 @@
 <view class="container">
   <view class="search-form">
-    <input class="search-input" cursor-spacing="2" confirm-type="search"></input>
+    <input class="search-input" bindinput="inputchangeHandle" bindconfirm="inputconfirm" cursor-spacing="2" confirm-type="搜索"></input>
     <view class="search-box">
       <icon type='search' class='search-icon' color='#e0e0e0' size='13'></icon>
       <text class="search-text">搜索</text>
     </view>
   </view>
-  <!-- <view class="list-item" wx:for="{{list}}">
-    <image class="listImage" src="{{}}" />
-  </view> -->
+  <view class="list">
+    <navigator url="/pages/list-detail/index?id={{item.id}}" class="list-item" wx:for="{{list}}" wx:key="id">
+      <view class="listImage">
+        <image src="{{item.images[0]}}" mode="aspectFill" />
+      </view>
+      <view class="list-detail">
+        <text class="title">{{item.name}}</text>
+        <text class="phone-num">电话：{{item.phone}}</text>
+        <text class="address">地址：{{item.address}}</text>
+        <text class="open-time">营业时间：{{item.businessHours}}</text>
+        <!-- 评分 -->
+        <text class="score" wx:if="{{item.score}}">{{item.score}}</text>
+      </view>
+    </navigator>
+  </view>
+  <view class="loading" wx:if="{{reachBottomFlag}}">正在加载 . . .</view>
 </view>
