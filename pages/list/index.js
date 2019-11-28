@@ -7,6 +7,7 @@ Page({
     pageSize: 20,
     reachBottomFlag: false,
     searchText: '',
+    showBlock: false,
   },
   onLoad(options) {
     this.data.id = options.id;
@@ -25,6 +26,9 @@ Page({
       q: this.data.searchText
     }
     ApiList.getList(this.data.id, params).then((res) => {
+      this.setData({
+        showBlock: true
+      })
       const total = parseInt(res.header['X-Total-Count']);
       const reachBottomFlag = total > this.data.pageIndex * this.data.pageSize;
       const list = [...this.data.list, ...res.data];
