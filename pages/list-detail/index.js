@@ -13,5 +13,9 @@ Page({
   /* 查看轮播图片 */
   viewImage(e) {
     console.log(e);
+    wx.previewImage({
+      urls: this.data.shops.images,
+      current: e.target.dataset.src
+    })
   },
 })
