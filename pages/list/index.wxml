@@ -7,7 +7,7 @@
     </view>
   </view>
   <view class="list">
-    <navigator url="/pages/list-detail/index?id={{item.id}}" class="list-item" wx:for="{{list}}" wx:key="id">
+    <navigator url="/pages/list-detail/index?id={{item.id}}" class="list-item" hover-class="none" wx:for="{{list}}" wx:key="id">
       <view class="listImage">
         <image src="{{item.images[0]}}" mode="aspectFill" />
       </view>

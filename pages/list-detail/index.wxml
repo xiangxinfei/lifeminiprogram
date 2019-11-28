@@ -14,4 +14,20 @@
     <text class="shop-address">地址：{{shops.address}}</text>
     <text class="shop-businessHours">营业时间：{{shops.businessHours}}</text>
   </view>
+  <!-- 评论 -->
+  <view class="commentss-list">
+    <view class="comment-item" wx:for="{{shops.comments}}" wx:key="{{index}}">
+      <view class="title">
+        <view class="title-name">{{item.name}}</view>
+        <view class="title-grade">
+          <view class="rating">{{item.rating}}%</view>
+          <view class="date">{{item.date}}</view>
+        </view>
+      </view>
+      <view class="content">{{item.content}}</view>
+      <view class="image-list">
+        <image class="images" wx:for="{{item.images}}" wx:key="{{index}} " src="{{item}}" mode="aspectFill" />
+      </view>
+    </view>
+  </view>
 </view>
