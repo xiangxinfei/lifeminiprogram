@@ -1,0 +1,4 @@
+<view class="go-top" hidden="{{!visible}}" catch:tap="goTop">
+  <iconfont class="icon" type="zhiding" size="32" color="#333" />
+  <text class="text">顶部</text>
+</view>

@@ -1,0 +1,25 @@
+.go-top {
+  position: fixed;
+  z-index: 500;
+  right: 20rpx;
+  bottom: 160rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, .2);
+}
+
+.go-top .icon {
+  margin: 0 auto;
+}
+
+.go-top .text {
+  font-size: 24rpx;
+  line-height: 1.2;
+  color: #333;
+}

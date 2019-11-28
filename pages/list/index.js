@@ -8,8 +8,12 @@ Page({
     reachBottomFlag: false,
     searchText: '',
     showBlock: false,
+    goTopVisible: false,
+    scrollTop: 0,
   },
   onLoad(options) {
+    console.log(this.data.goTopVisible);
+
     this.data.id = options.id;
     ApiList.getTitle(this.data.id).then((res) => {
       wx.setNavigationBarTitle({
@@ -44,7 +48,7 @@ Page({
     this.setData({
       pageIndex: 0,
       list: [],
-      reachBottomFlag: false
+      reachBottomFlag: false,
     });
     this.loadmore();
   },
@@ -63,9 +67,34 @@ Page({
     this.setData({
       pageIndex: 0,
       list: [],
-      reachBottomFlag: false
+      reachBottomFlag: false,
+      showBlock: false
     });
     this.loadmore();
+  },
+  /* 页面滚动 */
+  onPageScroll(e) {
+    this.data.scrollTop = e.scrollTop;
+    if (e.scrollTop > 700) {
+      this.setData({
+        goTopVisible: true
+      })
+      console.log(this.data.goTopVisible);
+
+    }
+  },
+  /* 回到顶部 */
+  goTop() {
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 300,
+      selector: '.container',
+    });
+    this.setData({
+      goTopVisible: false,
+      scrollTop: 0
+    })
+    console.log(this.data.goTopVisible);
   },
   onShareAppMessage() {
     console.log('分享');

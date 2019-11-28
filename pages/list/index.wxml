@@ -23,3 +23,5 @@
   </view>
   <view class="loading" wx:if="{{reachBottomFlag}}">正在加载 . . .</view>
 </view>
+<!-- 返回顶部 -->
+<go-top visible="{{goTopVisible}}" bind:goTop="goTop" />
