@@ -9,7 +9,7 @@
   <view class="list">
     <navigator url="/pages/list-detail/index?id={{item.id}}" class="list-item" hover-class="none" wx:for="{{list}}" wx:key="id">
       <view class="listImage">
-        <image src="{{item.images[0]}}" mode="aspectFill" />
+        <image src="{{item.images[0]}}" lazy-load="{{true}}" mode="aspectFill" />
       </view>
       <view class="list-detail">
         <text class="title">{{item.name}}</text>

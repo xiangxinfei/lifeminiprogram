@@ -5,16 +5,16 @@
     <swiper class="swiper-container" indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}">
       <swiper-item class="swiper-item" wx:for="{{slides}}" wx:key="id">
         <navigator wx:if="{{item.link}}" class="navigator" hover-class="none" url="/pages/list/index?id=3">
-          <image class="item-image" src="{{item.image}}" mode="aspectFill" />
+          <image class="item-image" src="{{item.image}}" lazy-load="{{true}}" mode="aspectFill" />
           <text class="">{{item.id}}</text>
         </navigator>
-        <image wx:else class="item-image" src="{{item.image}}" mode="aspectFill" />
+        <image wx:else class="item-image" src="{{item.image}}" lazy-load="{{true}}" mode="aspectFill" />
       </swiper-item>
     </swiper>
   </view>
   <view class="menu">
     <navigator class="menu-item" wx:for="{{menu}}" wx:key="id" hover-class="none" url="/pages/list/index?id={{item.id}}">
-      <image class="item-image" src="{{item.icon}}" mode="aspectFit" />
+      <image class="item-image" src="{{item.icon}}" lazy-load="{{true}}" mode="aspectFit" />
       <text class="item-text">{{item.name}}</text>
     </navigator>
   </view>
