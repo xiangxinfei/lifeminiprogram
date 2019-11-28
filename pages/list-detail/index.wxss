@@ -9,3 +9,32 @@
   width: 100%;
   height: 100%;
 }
+
+.introduce {
+  background-color: #fff;
+  padding: 30rpx 26rpx;
+  display: flex;
+  flex-direction: column;
+  font-size: 26rpx;
+  color: #999;
+  margin-bottom: 20rpx;
+}
+
+.introduce text {
+  margin-bottom: 6rpx;
+}
+
+.introduce .shop-name {
+  font-size: 38rpx;
+  color: #333;
+  font-weight: 700;
+}
+
+.introduce .shop-address {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  word-break: break-all;
+}
