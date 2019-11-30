@@ -1,6 +1,8 @@
 <view class="container">
+  <!-- 加载动画 -->
+  <loading class="pageloading" wx:if="{{isLoading}}" />
   <!-- 轮播图 -->
-  <view class="slide-container">
+  <view class="slide-container" wx:else>
     <swiper class="slide-swiper" indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}">
       <swiper-item class="slide-item" wx:for="{{shops.images}}" wx:key="id">
         <image class="item-image" src="{{item}}" data-src="{{item}}" mode="aspectFill" lazy-load="{{true}}" bindtap="previewImage" />
@@ -31,3 +33,5 @@
     </view>
   </view>
 </view>
+<!-- 返回顶部 -->
+<go-top visible="{{goTopVisible}}" bind:goTop="goTop" />

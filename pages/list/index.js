@@ -2,18 +2,16 @@ import ApiList from '../../api/list'
 Page({
   data: {
     list: [],
+    isLoading: true,
     id: 0,
     pageIndex: 0,
     pageSize: 20,
     reachBottomFlag: false,
     searchText: '',
-    showBlock: false,
     goTopVisible: false,
     scrollTop: 0,
   },
   onLoad(options) {
-    console.log(this.data.goTopVisible);
-
     this.data.id = options.id;
     ApiList.getTitle(this.data.id).then((res) => {
       wx.setNavigationBarTitle({
@@ -30,15 +28,13 @@ Page({
       q: this.data.searchText
     }
     ApiList.getList(this.data.id, params).then((res) => {
-      this.setData({
-        showBlock: true
-      })
       const total = parseInt(res.header['X-Total-Count']);
       const reachBottomFlag = total > this.data.pageIndex * this.data.pageSize;
       const list = [...this.data.list, ...res.data];
       this.setData({
         list,
-        reachBottomFlag
+        reachBottomFlag,
+        isLoading: false
       })
       wx.stopPullDownRefresh();
     })
@@ -68,33 +64,31 @@ Page({
       pageIndex: 0,
       list: [],
       reachBottomFlag: false,
-      showBlock: false
+      isLoading: true
     });
     this.loadmore();
   },
   /* 页面滚动 */
   onPageScroll(e) {
     this.data.scrollTop = e.scrollTop;
-    if (e.scrollTop > 700) {
+    if (this.data.goTopVisible !== this.data.scrollTop > 700) {
       this.setData({
-        goTopVisible: true
-      })
-      console.log(this.data.goTopVisible);
-
+        goTopVisible: this.data.scrollTop > 700,
+      });
     }
   },
   /* 回到顶部 */
   goTop() {
     wx.pageScrollTo({
       scrollTop: 0,
-      duration: 300,
       selector: '.container',
+      success: (res) => {
+        this.setData({
+          goTopVisible: false,
+          scrollTop: 0
+        })
+      }
     });
-    this.setData({
-      goTopVisible: false,
-      scrollTop: 0
-    })
-    console.log(this.data.goTopVisible);
   },
   onShareAppMessage() {
     console.log('分享');

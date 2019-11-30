@@ -2,6 +2,7 @@
   "enablePullDownRefresh": true,
   "usingComponents": {
     "iconfont": "../../components/iconfont/index",
-    "go-top": "../../components/go-top/index"
+    "go-top": "../../components/go-top/index",
+    "loading": "../../components/loading/index"
   }
 }

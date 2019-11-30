@@ -1,0 +1,3 @@
+<view class="loading">
+  <image class="pic" src="https://i.qfangimg.com/resource/qfang-mobile-wx/img/loading.gif?20180822" mode="scaleToFill" />
+</view>

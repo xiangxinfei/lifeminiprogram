@@ -3,7 +3,10 @@ Page({
   data: {
     shops: {},
     showData: false,
-    commontId:0,
+    commontId: 0,
+    goTopVisible: false,
+    scrollTop: 0,
+    isLoading: true,
   },
   onLoad(options) {
     ApiListDetail.getDetail(options.id).then((res) => {
@@ -14,7 +17,8 @@ Page({
       })
       this.setData({
         shops: res.data,
-        showData: true
+        showData: true,
+        isLoading: false,
       })
       wx.setNavigationBarTitle({
         title: res.data.name,
@@ -40,5 +44,27 @@ Page({
       urls: this.data.shops.comments[this.data.commontId].images,
       current: e.target.dataset.src
     })
-  }
+  },
+  /* 页面滚动 */
+  onPageScroll(e) {
+    this.data.scrollTop = e.scrollTop;
+    if (this.data.goTopVisible !== this.data.scrollTop > 700) {
+      this.setData({
+        goTopVisible: this.data.scrollTop > 700,
+      });
+    }
+  },
+  /* 回到顶部 */
+  goTop() {
+    wx.pageScrollTo({
+      scrollTop: 0,
+      selector: '.container',
+      success: (res) => {
+        this.setData({
+          goTopVisible: false,
+          scrollTop: 0
+        })
+      }
+    });
+  },
 })
