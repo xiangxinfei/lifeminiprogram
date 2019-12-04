@@ -1,0 +1,7 @@
+.loadingnext {
+  font-size: 26rpx;
+  background: #bcc0c9;
+  padding: 16rpx 0;
+  text-align: center;
+  color: #fff;
+}

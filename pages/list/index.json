@@ -3,6 +3,7 @@
   "usingComponents": {
     "iconfont": "../../components/iconfont/index",
     "go-top": "../../components/go-top/index",
-    "loading": "../../components/loading/index"
+    "loading": "../../components/loading/index",
+    "loadingnextpage": "../../components/loadingnextpage/index"
   }
 }

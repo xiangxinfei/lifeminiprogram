@@ -1,6 +1,6 @@
 <view class="body">
   <!-- 页面首次加载 -->
-  <loading class="remaining" wx:if="{{isLoading}}" />
+  <loading class="remaining" wx:if="{{isLoading}}"></loading>
   <view class="page" wx:else>
     <view class="search-form">
       <input class="search-input" bindinput="inputchangeHandle" bindconfirm="inputconfirm" cursor-spacing="2" confirm-type="搜索"></input>
@@ -24,7 +24,8 @@
         </view>
       </navigator>
     </view>
-    <view class="loading" wx:if="{{reachBottomFlag}}">正在加载 . . .</view>
+    <!-- 正在加载 -->
+    <loadingnextpage wx:if="{{reachBottomFlag}}" />
   </view>
 </view>
 <!-- 返回顶部 -->
