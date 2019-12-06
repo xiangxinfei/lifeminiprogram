@@ -25,12 +25,12 @@
   border-right: 1px solid #f5f5f5;
 }
 
-.menu .menu-item .item-image {
+.menu .item-image {
   width: 70rpx;
   height: 70rpx;
   margin-bottom: 18rpx;
 }
 
-.menu .menu-item .item-text {
+.menu .item-text {
   font-size: 26rpx;
 }

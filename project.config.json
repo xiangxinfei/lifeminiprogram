@@ -11,6 +11,14 @@
       },
       {
         "type": "file",
+        "value": "*.scss"
+      },
+      {
+        "type": "file",
+        "value": "pages/**/*.scss"
+      },
+      {
+        "type": "file",
         "value": ".gitignore"
       }
     ]

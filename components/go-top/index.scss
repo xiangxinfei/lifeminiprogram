@@ -11,15 +11,16 @@
   height: 100rpx;
   border-radius: 50%;
   background-color: #fff;
-  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.2);
-}
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, .2);
 
-.go-top .icon {
-  margin: 0 auto;
-}
+  .icon {
+    margin: 0 auto;
+  }
 
-.go-top .text {
-  font-size: 24rpx;
-  line-height: 1.2;
-  color: #333;
+  .text {
+    font-size: 24rpx;
+    line-height: 1.2;
+    color: #333;
+  }
+
 }
