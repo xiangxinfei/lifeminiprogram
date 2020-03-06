@@ -5,14 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo: {},
+    hasUserInfo: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**
@@ -26,7 +26,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    const userInfo = wx.getStorageSync('userInfo');
+    this.setData({
+      hasUserInfo: !!userInfo,
+      userInfo
+    })
   },
 
   /**
@@ -62,5 +66,43 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  /* 获取用户信息 */
+  getUserInfo(msg) {
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            lang: 'zh_CN',
+            success: data => {
+              console.log(data);
+
+              this.setData({
+                userInfo: data.userInfo,
+                hasUserInfo: true
+              })
+              wx.setStorageSync('userInfo', data.userInfo);
+            }
+          })
+        }
+      }
+    })
+  },
+
+  /* 清除用户信息 */
+  clearMsg() {
+    wx.showModal({
+      title: '提示',
+      content: '确定删除个人信息吗？',
+      success: res => {
+        if (res.confirm) {
+          wx.clearStorageSync('userInfo');
+          this.setData({
+            userInfo: {},
+            hasUserInfo: false
+          })
+        }
+      }
+    })
   }
 })

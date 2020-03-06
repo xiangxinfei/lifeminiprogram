@@ -20,7 +20,8 @@
           <text class="address">地址：{{item.address}}</text>
           <text class="open-time">营业时间：{{item.businessHours}}</text>
           <!-- 评分 -->
-          <text class="score" wx:if="{{item.score}}">{{item.score}}</text>
+          <text class="score" wx:if="{{item.score > 0 && item.score < 100 }}">{{item.score}}</text>
+          <text class="score" wx:elif="{{item.score > 0 && item.score > 99 }}">99+</text>
         </view>
       </navigator>
     </view>

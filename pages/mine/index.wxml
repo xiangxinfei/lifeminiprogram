@@ -1,2 +1,18 @@
-<!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<!-- pages/mine/mine.wxml -->
+<text class="title">向新飞的小程序</text>
+<button type="primary" wx:if="{{!hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+  点击获取个人信息
+</button>
+<block wx:else>
+  <view class="userInfo">
+    <image class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFit"></image>
+    <text class="nickName">{{userInfo.nickName}}</text>
+    <text class="gender" wx:if="{{userInfo.gender}}">{{userInfo.gender === 1 ? '男' : '女'}}</text>
+    <text class="country" wx:if="{{userInfo.country}}">{{userInfo.country}}</text>
+    <view class="place">
+      <text class="province" wx:if="{{userInfo.province}}">{{userInfo.province}}</text>
+      <text class="city" wx:if="{{userInfo.city}}">• {{userInfo.city}}</text>
+    </view>
+  </view>
+  <button class="clearMsg" type="primary" bind:tap="clearMsg">清除个人信息</button>
+</block>
