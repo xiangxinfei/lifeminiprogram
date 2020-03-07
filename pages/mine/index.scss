@@ -10,6 +10,13 @@
   margin-bottom: 20rpx;
 }
 
+.getUserInfo,
+.clearMsg {
+  width: 260rpx !important;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
 .userInfo {
   display: flex;
   flex-direction: column;

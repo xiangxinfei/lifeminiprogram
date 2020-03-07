@@ -1,0 +1,15 @@
+<view class="container">
+  <camera device-position="back" flash="off" style="width: {{cameraWidth}}px; height: {{cameraHeight}}px">
+    <cover-view class="coverViewFir" wx:if="{{showPhotoButton}}">
+      <button class="takePhoto" bind:tap="takePhoto">拍照</button>
+    </cover-view>
+    <cover-view wx:else>
+      <!-- 拍完显示照片 -->
+      <cover-image class="coverImage" wx:if="{{imageSrc}}" src="{{imageSrc}}" style="width: {{cameraWidth}}px; height: {{cameraHeight}}px"></cover-image>
+      <cover-view class="coverViewSec" scroll-top="0">
+        <button class="cancel" type="warn" bind:tap="cancel">重拍</button>
+        <button class="save" type="primary" bind:tap="save">保存</button>
+      </cover-view>
+    </cover-view>
+  </camera>
+</view>

@@ -1,7 +1,7 @@
 <!-- pages/mine/mine.wxml -->
 <text class="title">向新飞的小程序</text>
-<button type="primary" wx:if="{{!hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
-  点击获取个人信息
+<button class="getUserInfo" type="primary" wx:if="{{!hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+  获取个人信息
 </button>
 <block wx:else>
   <view class="userInfo">
@@ -11,7 +11,7 @@
     <text class="country" wx:if="{{userInfo.country}}">{{userInfo.country}}</text>
     <view class="place">
       <text class="province" wx:if="{{userInfo.province}}">{{userInfo.province}}</text>
-      <text class="city" wx:if="{{userInfo.city}}">• {{userInfo.city}}</text>
+      <text class="city" wx:if="{{userInfo.city}}"> • {{userInfo.city}}</text>
     </view>
   </view>
   <button class="clearMsg" type="primary" bind:tap="clearMsg">清除个人信息</button>

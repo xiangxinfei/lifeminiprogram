@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/camera/index",
     "pages/mine/index",
     "pages/list/index",
     "pages/list-detail/index"
@@ -23,6 +24,12 @@
         "text": "首页",
         "iconPath": "/assets/images/home.png",
         "selectedIconPath": "/assets/images/home-active.png"
+      },
+      {
+        "pagePath": "pages/camera/index",
+        "text": "相机",
+        "iconPath": "/assets/images/message.png",
+        "selectedIconPath": "/assets/images/message-active.png"
       },
       {
         "pagePath": "pages/mine/index",

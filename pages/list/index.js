@@ -3,7 +3,6 @@ Page({
   data: {
     list: [],
     isLoading: true,
-    id: 0,
     pageIndex: 0,
     pageSize: 20,
     reachBottomFlag: false,
@@ -11,9 +10,10 @@ Page({
     goTopVisible: false,
     scrollTop: 0,
   },
+  id: '',
   onLoad(options) {
-    this.data.id = options.id;
-    ApiList.getTitle(this.data.id).then((res) => {
+    this.id = options.id;
+    ApiList.getTitle(this.id).then((res) => {
       wx.setNavigationBarTitle({
         title: res.data.name
       })
@@ -27,7 +27,7 @@ Page({
       _limit: this.data.pageSize,
       q: this.data.searchText
     }
-    ApiList.getList(this.data.id, params).then((res) => {
+    ApiList.getList(this.id, params).then((res) => {
       const total = parseInt(res.header['X-Total-Count']);
       const reachBottomFlag = total > this.data.pageIndex * this.data.pageSize;
       const list = [...this.data.list, ...res.data];

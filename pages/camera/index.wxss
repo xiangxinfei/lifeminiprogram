@@ -1,0 +1,45 @@
+.container {
+  position: relative;
+}
+
+.coverViewFir {
+  position: absolute;
+  bottom: 50rpx;
+  left: 50%;
+  transform: translate(-50%);
+  opacity: 0.85;
+}
+
+.coverViewFir .takePhoto {
+  width: 160rpx !important;
+  height: 160rpx;
+  border-radius: 50%;
+  background-color: #1aad19;
+  color: #fff;
+  text-align: center;
+  line-height: 160rpx;
+}
+
+.coverViewSec {
+  position: absolute;
+  bottom: 50rpx;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.coverViewSec button {
+  width: 140rpx !important;
+  height: 140rpx;
+  border-radius: 50%;
+  line-height: 140rpx;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.operate {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

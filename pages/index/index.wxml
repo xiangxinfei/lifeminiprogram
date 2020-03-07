@@ -4,11 +4,9 @@
   <view>
     <swiper class="swiper-container" indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}">
       <swiper-item class="swiper-item" wx:for="{{slides}}" wx:key="id">
-        <navigator wx:if="{{item.link}}" class="navigator" hover-class="none" url="/pages/list/index?id=3">
+        <navigator class="navigator" hover-class="none" url="/pages/list/index?id=1">
           <image class="item-image" src="{{item.image}}" lazy-load="{{true}}" mode="aspectFill" />
-          <text class="">{{item.id}}</text>
         </navigator>
-        <image wx:else class="item-image" src="{{item.image}}" lazy-load="{{true}}" mode="aspectFill" />
       </swiper-item>
     </swiper>
   </view>
